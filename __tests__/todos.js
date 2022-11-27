@@ -83,6 +83,7 @@ describe("Todo Application", function () {
 
     const response1 = await agent.get("/todos");
     const parsedResponse1 = JSON.parse(response1.text);
+    const InitialLength = parsedResponse1.length;
 
     expect(parsedResponse1.length).toBe(5);
 
@@ -93,6 +94,6 @@ describe("Todo Application", function () {
     const response2 = await agent.get("/todos");
     const parsedResponse2 = JSON.parse(response2.text);
 
-    expect(parsedResponse2.length).toBe(4);
+    expect(parsedResponse2.length).toBe(InitialLength - 1);
   });
 });
