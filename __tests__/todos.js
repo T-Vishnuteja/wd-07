@@ -80,6 +80,7 @@ describe("Todo Application", function () {
     });
     const parsedResponse = JSON.parse(response.text);
     const todoID = parsedResponse.id;
+
     const response1 = await agent.get("/todos");
     const parsedResponse1 = JSON.parse(response1.text);
 
